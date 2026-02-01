@@ -1,14 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Login App</title>
+    <title>Login Page</title>
+    <script>
+        function validateLogin() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+            if (username === "admin" && password === "admin") {
+                window.location.href = "welcome.html";
+            } else {
+                alert("Invalid credentials");
+            }
+        }
+    </script>
 </head>
 <body>
     <h2>Login Page</h2>
-    <form>
-        <input type="text" placeholder="Username"><br><br>
-        <input type="password" placeholder="Password"><br><br>
-        <button>Login</button>
-    </form>
+
+    <label>Username:</label>
+    <input type="text" id="username"><br><br>
+
+    <label>Password:</label>
+    <input type="password" id="password"><br><br>
+
+    <button onclick="validateLogin()">Login</button>
 </body>
 </html>
